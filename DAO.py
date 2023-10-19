@@ -12,4 +12,3 @@ def listar_tarefas():
         for tarefa in tarefas:
             _, conteudo = tarefa.strip().split(" -- ", 1)
             print(conteudo)
-
