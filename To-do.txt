@@ -1,1 +1,2 @@
-1 -- Passear
+1 -- Lavar a roupa
+2 -- Passear

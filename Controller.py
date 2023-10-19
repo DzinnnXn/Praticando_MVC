@@ -23,7 +23,6 @@ class ControllerExcluirTarefa():
         except Exception as erro:
             print(f"Erro ao excluir tarefa: {erro}")
 
-
 class ControllerListarTarefa():
     def __init__(self):
         try:
@@ -31,12 +30,11 @@ class ControllerListarTarefa():
             if not ControllerLista:
                 print("Nenhuma tarefa encontrada.")
             else:
-                cont = 1
                 for tarefa in ControllerLista:
-                    print(f"{cont} \t {tarefa}")
-                    cont += 1
+                    print(f"\t {tarefa}")
         except Exception as erro:
             print(f"Erro: {erro}")
+
 
 todo = ToDO()
 
@@ -46,5 +44,3 @@ def obter_opcao():
             return int(opcao)
         else:
             print("Por favor, digite um número inteiro válido.")
-
-

@@ -10,4 +10,6 @@ def listar_tarefas():
     with open('To-do.txt', 'r') as arquivo:
         tarefas = arquivo.readlines()
         for tarefa in tarefas:
-            print(tarefa.strip())
+            _, conteudo = tarefa.strip().split(" -- ", 1)
+            print(conteudo)
+
