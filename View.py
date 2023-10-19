@@ -2,7 +2,7 @@ from Controller import *
 from Model import *
 from DAO import *
 
-sair=True
+sair = True
 
 while sair == True:
     print("Software de gerenciamento de tarefas")
@@ -12,7 +12,7 @@ while sair == True:
     print("4 - Ver o TxT")
     print("5 - Sair")
     print("")
-    
+
     opcao = obter_opcao()
 
     match opcao:
@@ -32,13 +32,12 @@ while sair == True:
             listarTarefa=ControllerListarTarefa()
             parar()
             limpar()
+
         case 3:
             limpar()
             listarTarefa=ControllerListarTarefa()
-            
             parar()
             limpar()
-
 
         case 4:
             limpar()
@@ -50,9 +49,7 @@ while sair == True:
             limpar()
 
         case 5:
-            sair=False
-
-        
+            sair=False        
     
         case _:
             limpar()
@@ -60,4 +57,3 @@ while sair == True:
             print("")
             parar()
             limpar()
-
