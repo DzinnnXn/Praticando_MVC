@@ -1,45 +1,50 @@
-from Model import *
+from model import *
 
-class Controlleradicionartarefa():
+class ControllerAdicionarTarefa():
     def __init__(self, tarefa):
         self.tarefa = tarefa
-
-    def adicionar_tarefa(self):
         try:
-            if self.tarefa == '' or isinstance(self.tarefa, (int, float)):
-                raise ValueError("Não é possível adicionar uma tarefa vazia")
-            
-            if TODO.addTarefa(self.tarefa):
-                print('Tarefa adicionada com sucesso')
-            else:
-                print('Erro ao adicionar tarefa')
+            todo.addTarefa(self.tarefa)
+            print("Tarefa adicionada com sucesso")
+        except Exception as e:
+            print(f"Erro ao adicionar tarefa: {e}")
+        print("")  
 
-        except Exception as erro:
-            print("Ocorreu um erro: ", erro)
-
-class Controllerremovertarefa():
+class ControllerExcluirTarefa():
     def __init__(self, excluir):
-        self.excluir = excluir
-
-    def remover_tarefa(self):
         try:
-            if isinstance(self.excluir, (str, float)):
-                raise ValueError("Não é possível excluir a tarefa")
-            
-            if TODO.removeTarefa(self.excluir):
-                print("Tarefa Excluída")
+            excluir = int(excluir) - 1
+            if excluir < 0:
+                raise  ("Digite um número inteiro positivo para excluir a tarefa")
+            if excluir >= len(todo.lista):
+                raise ("Número de tarefa a excluir fora do alcance")
+            todo.removeTarefa(excluir)
+            print("Tarefa excluída com sucesso")
+        except Exception as erro:
+            print(f"Erro ao excluir tarefa: {erro}")
+
+
+class ControllerListarTarefa():
+    def __init__(self):
+        try:
+            ControllerLista = todo.listarTarefa()
+            if not ControllerLista:
+                print("Nenhuma tarefa encontrada.")
             else:
-                print("Algum problema foi encontrado")
+                cont = 1
+                for tarefa in ControllerLista:
+                    print(f"{cont} -- {tarefa}")
+                    cont += 1
         except Exception as erro:
-            print("Ocorreu um erro: ", erro)
+            print(f"Erro: {erro}")
 
-class Controllerlistartarefas():
-    def listar_tarefas(self):
-        try:
-            controleLista = TODO.listaTarefas()
-            cont = 1
-            for i in controleLista:
-                print(f'{cont}° - {i}')
-                cont += 1
-        except Exception as erro:
-            print("Ocorreu um erro: ", erro)
+todo = ToDO()
+
+def obter_opcao():
+        opcao = input("Digite a opção desejada: ")
+        if opcao.isdigit():
+            return int(opcao)
+        else:
+            print("Por favor, digite um número inteiro válido.")
+
+
