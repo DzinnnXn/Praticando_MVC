@@ -1,4 +1,4 @@
-from model import *
+from Model import *
 
 class ControllerAdicionarTarefa():
     def __init__(self, tarefa):
@@ -33,7 +33,7 @@ class ControllerListarTarefa():
             else:
                 cont = 1
                 for tarefa in ControllerLista:
-                    print(f"{cont} -- {tarefa}")
+                    print(f"{cont} \t {tarefa}\n")
                     cont += 1
         except Exception as erro:
             print(f"Erro: {erro}")

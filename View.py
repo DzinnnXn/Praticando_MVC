@@ -1,5 +1,5 @@
-from controller import *
-from model import *
+from Controller import *
+from Model import *
 from DAO import *
 sair=True
 
