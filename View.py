@@ -8,8 +8,7 @@ while sair == True:
     print("1 -> Adicionar tarefa")
     print("2 -> Excluir tarefa")
     print("3 -> Listar tarefas")
-    print("4 -> Ver o TxT")
-    print("5 -> Sair")
+    print("4 -> Sair")
     print("")
     
     opcao = obter_opcao()
@@ -33,14 +32,6 @@ while sair == True:
             limpar()
         case 3:
             limpar()
-            listarTarefa=ControllerListarTarefa()
-            
-            parar()
-            limpar()
-
-
-        case 4:
-            limpar()
             print("Conteúdo do arquivo To-do.txt")
             print("")
             listar_tarefas()
@@ -48,15 +39,12 @@ while sair == True:
             parar()
             limpar()
 
-        case 5:
+        case 4:
             sair=False
 
-        
-    
         case _:
             limpar()
             print("Opção inválida")
             print("")
             parar()
             limpar()
-
