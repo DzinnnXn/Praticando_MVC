@@ -1,42 +1,62 @@
-from Controller import*
-import os
+from controller import *
+from model import *
+from DAO import *
+sair=True
 
-def parar():
-    os.system('pause')
-
-def limpar():
-    os.system('cls')
-
-while True:
-    limpar()
-    print('--|To-Do|--\n 1. Adicionar tarefa\n 2. Remover tarefa\n 3. Listar tarefas\n 0. Sair')
-    opcao = int(input('Digite uma opção: '))
+while sair == True:
+    print("Software de gerenciamento de tarefas")
+    print("1 -> Adicionar tarefa")
+    print("2 -> Excluir tarefa")
+    print("3 -> Listar tarefas")
+    print("4 -> Ver o TxT")
+    print("5 -> Sair")
+    print("")
+    
+    opcao = obter_opcao()
 
     match opcao:
         case 1:
             limpar()
-            print("ADICIONAR TAREFA \n")
-            tarefa = input('Digite a tarefa: ')
-            addtarefa = Controlleradicionartarefa(tarefa)
+            tarefa = input("Digite a tarefa: ")
+            adicionartarefa=ControllerAdicionarTarefa(tarefa)
+            adicionar_tarefa(tarefa)
             parar()
+            limpar()
 
         case 2:
             limpar()
-            print("REMOVER TAREFA \n")
-            listartarefas = Controllerlistartarefas()
-            excluir = int(input("Digite o indice da tarefa que deseja remover \n>>"))
-            excluir -= 1
-            excluirTarefa = Controllerremovertarefa(excluir)
-
+            listarTarefa=ControllerListarTarefa()
+            excluir = (input("Digite o número da tarefa que deseja excluir: "))
+            excluirTarefa=ControllerExcluirTarefa(excluir)
+            listarTarefa=ControllerListarTarefa()
+            parar()
+            limpar()
         case 3:
             limpar()
-            print("LISTAR TAREFAS \n")
-            listartarefas = Controllerlistartarefas()
+            listarTarefa=ControllerListarTarefa()
+            
             parar()
-                    
-        case 0:
-            break
+            limpar()
+
+
+        case 4:
+            limpar()
+            print("Conteúdo do arquivo To-do.txt")
+            print("")
+            listar_tarefas()
+            print("")
+            parar()
+            limpar()
+
+        case 5:
+            sair=False
+
         
+    
         case _:
-            print('Opção inválida')
+            limpar()
+            print("Opção inválida")
+            print("")
             parar()
+            limpar()
+
