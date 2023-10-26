@@ -13,7 +13,8 @@ class ToDO():
         return 1
 
     def listarTarefa(self):
-        return self.lista
+        arquivo = open('To-do.txt', 'r')
+        arquivo.read()
 
 def limpar():
     os.system('cls')

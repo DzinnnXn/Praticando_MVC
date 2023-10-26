@@ -40,6 +40,7 @@ while sair == True:
 
         case 4:
             limpar()
+            print("Alterar a Tarefa\n")
             parar()
 
         case 5:

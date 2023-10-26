@@ -1,3 +1,2 @@
-ID  TAREFA
- 7325    Passear
- 3616    Lavar a louça
+ID    TAREFA
+ 1124    Passear
