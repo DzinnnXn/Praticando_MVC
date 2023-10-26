@@ -3,16 +3,16 @@
 
 ### Funções
 
-- [1] Adicionar Tarefa
-- [2] Listar Tarefa
-- [3] Alterar Tarefa
-- [4] Concluir Tarefa
-- [5] Listar Tarefas Concluidas
-- [6] Excluir Tarefa
-- [7] Sair
+- [1] -> Adicionar tarefa
+- [2] -> Listar tarefas
+- [3] -> Alterar tarefas
+- [4] -> Concluir Tarefa
+- [5] -> Listar tarefas concluidas
+- [6] -> Excluir tarefa
+- [7] -> Sair
 
 ### Objetivo
-<p>Desenvolver um software de Lista de Tarefas, no qual o usuário poderá adicionar tarefas, excluir aquelas que já foram finalizadas e visualizar as tarefas registradas. Essas tarefas serão armazenadas em um arquivo de texto, o qual será atualizado conforme as alterações feitas pelo usuário.</p>
+<p>Desenvolver um software de Lista de Tarefas, no qual o usuário poderá adicionar tarefas, excluir aquelas que já foram finalizadas, visualizar as atividades completas e visualizar as tarefas pendentes registradas. Essas tarefas serão armazenadas em um arquivo de texto, o qual será atualizado conforme as alterações feitas pelo usuário.</p>
 
 ### Documentação sobre o MVC
 
