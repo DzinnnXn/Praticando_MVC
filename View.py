@@ -6,14 +6,11 @@ sair = True
 
 while sair == True:
     print("Software de gerenciamento de tarefas")
-    print("[1] - Adicionar tarefa")
-    print("[2] - Listar tarefas")
-    print("[3] - Alterar tarefa")
-    print("[4] - Concluir tarefa")
-    print("[5] - Listar tarefas concluidas")
-    print("[6] - Excluir tarefas")
-    print("[7] - Sair")
-    print("Digite o numero equivalente a opção que deseja")
+    print("1 -> Adicionar tarefa")
+    print("2 -> Excluir tarefa")
+    print("3 -> Listar tarefas")
+    print("4 -> Sair")
+    print("")
 
     opcao = obter_opcao()
 
@@ -21,49 +18,34 @@ while sair == True:
         case 1:
             limpar()
             tarefa = input("Digite a tarefa: ")
-            adicionartarefa=ControllerAdicionarTarefa(tarefa)
+            adicionartarefa = ControllerAdicionarTarefa(tarefa)
             parar()
             limpar()
 
         case 2:
             limpar()
-            print("TAREFAS")
+            listarTarefa = ControllerListarTarefa()
+            excluir = input("Digite o número da tarefa que deseja excluir: ")
+            excluirTarefa = ControllerExcluirTarefa(excluir)
+            limpar()
+            listarTarefa = ControllerListarTarefa()
+            parar()
+            limpar()
+        case 3:
+            limpar()
+            print("Conteúdo do arquivo To-do.txt")
             print("")
             listar_tarefas()
             print("")
             parar()
             limpar()
 
-        case 3:
-            limpar()
-            parar()
-
         case 4:
-            limpar()
-            print("Alterar a Tarefa\n")
-            parar()
+            sair = False
 
-        case 5:
-            limpar()
-            parar()
-
-        case 6:
-            limpar()
-            listarTarefa=ControllerListarTarefa()
-            excluir = (input("Digite o número da tarefa que deseja excluir: "))
-            excluirTarefa=ControllerExcluirTarefa(excluir)
-            listarTarefa=ControllerListarTarefa()
-            parar()
-            limpar()
-
-        case 7:
-            limpar()
-            print("Saindo...")
-            parar()
-            sair=False        
-    
         case _:
             limpar()
             print("Opção inválida")
+            print("")
             parar()
             limpar()
