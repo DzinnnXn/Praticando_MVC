@@ -6,11 +6,11 @@ sair = True
 
 while sair == True:
     print("Software de gerenciamento de tarefas")
-    print("1 - Adicionar tarefa")
-    print("2 - Excluir tarefa")
-    print("3 - Listar tarefas")
-    print("4 - Sair")
-    print("")
+    print("[1] - Adicionar tarefa")
+    print("[2] - Excluir tarefa")
+    print("[3] - Listar tarefas")
+    print("[4] - Sair")
+    print("Digite o numero equivalente a opção que deseja")
 
     opcao = obter_opcao()
 
@@ -19,7 +19,6 @@ while sair == True:
             limpar()
             tarefa = input("Digite a tarefa: ")
             adicionartarefa=ControllerAdicionarTarefa(tarefa)
-            adicionar_tarefa(tarefa)
             parar()
             limpar()
 
@@ -42,11 +41,13 @@ while sair == True:
             limpar()
 
         case 4:
+            limpar()
+            print("Saindo...")
+            parar()
             sair=False        
     
         case _:
             limpar()
             print("Opção inválida")
-            print("")
             parar()
             limpar()

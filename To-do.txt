@@ -1,2 +1,3 @@
-1 -- Lavar a roupa
-2 -- Passear
+ID  TAREFA
+ 7325    Passear
+ 3616    Lavar a louça
