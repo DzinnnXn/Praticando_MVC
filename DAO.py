@@ -19,26 +19,19 @@ def adicionar_tarefa(tarefa):
 def listar_tarefas():
     with open("To-do.txt", "r") as arquivo:
         tarefas = arquivo.readlines()
-        print("ID   STATUS  TAREFA")
-        for tarefa in tarefas:
-            if tarefa.startswith("A"):
-                status = "A"
-                tarefa = tarefa[1:]
-            elif tarefa.startswith("C"):
-                status = "C"
-                tarefa = tarefa[1:]
-            else:
-                status = ""
-            
-            id, descricao = tarefa.split(maxsplit=1)
-            id = id.strip()
-            descricao = descricao.strip()
-            
-            if status:  # Verifica se há status antes de exibi-lo
-                print(f"{id:<4} {status:<7} {descricao}")
-            else:
-                print(f"{id:<11} {descricao}")
+        tarefas_sem_numero = []
+        for item in tarefas:
+            item_sem_numeros = "".join(
+                caractere for caractere in item if not caractere.isdigit()
+            )
+            tarefas_sem_numero.append(item_sem_numeros)
+        for index, item in enumerate(tarefas_sem_numero):
+            if index == 0:
+                print("ID   STATUS  TAREFA")
+            elif item.startswith("A"):
+                print(f"{index}     {item.strip()}")
     return tarefas
+
 
 def excluir_tarefas(tarefa):
     with open("To-do.txt", "r") as arquivo:
@@ -86,7 +79,9 @@ def alterar_tarefa(tarefa):
                 status_tarefa = item[0]
                 tarefas.pop(index)
                 nova_tarefa = input("Digite a nova tarefa: ")
-                tarefas.insert(index, f"{status_tarefa}\t{id_tarefa}\t{nova_tarefa}\n")
+                tarefas.insert(
+                    index, f"{status_tarefa}        {id_tarefa}    {nova_tarefa}\n"
+                )
             index += 1
     with open("To-do.txt", "w") as arquivo:
         for item in tarefas:
