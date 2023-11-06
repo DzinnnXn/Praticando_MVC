@@ -1,1 +1,2 @@
-A        5630    Lavar a louca
+Status  ID      TAREFA
+C        7704    teste
